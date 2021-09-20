@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        order_updates: true
+        order_inserts: true
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 5
+    url: jdbc:postgresql://localhost:5432/testapp
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog.xml
