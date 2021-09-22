@@ -26,7 +26,6 @@ public class CustomerRepositoryTest {
     private CustomerRepository customerRepository;
 
     @Test
-    @Transactional
     void testFindAllReturnsName() {
         Customer testCustomer = new Customer();
         testCustomer.setName(name);
