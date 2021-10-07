@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api:
+    build: ./ # docker-compose должен взять docker-file из папки ./api
+    container_name: test-docker-container
+    command: java -jar app.jar
+    restart: unless-stopped
+    ports:
+      - "8081:8081" # слева - порт компа, слева - порт контейнера
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: testapp
+    ports:
+    - "5432:5432"

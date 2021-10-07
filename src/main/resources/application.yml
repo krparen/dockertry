@@ -17,7 +17,7 @@ spring:
     password: postgres
     hikari:
       maximum-pool-size: 5
-    url: jdbc:postgresql://localhost:5432/testapp
+    url: jdbc:postgresql://db:5432/testapp
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog.xml
